@@ -1,5 +1,5 @@
 
-import { GoogleGenAI } from "@google/genai";
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
 const API_KEY = process.env.API_KEY;
 
@@ -7,7 +7,7 @@ if (!API_KEY) {
     throw new Error("API_KEY is not defined in environment variables.");
 }
 
-const ai = new GoogleGenAI({ apiKey: API_KEY });
+const ai = new GoogleGenerativeAI(API_KEY);
 
 export async function getHerbalTeaSuggestion(problem: string): Promise<string> {
     const prompt = `
