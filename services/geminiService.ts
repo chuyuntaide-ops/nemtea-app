@@ -1,17 +1,17 @@
 // services/geminiService.ts
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-// ✅ Vercel の環境変数（VITE_ ではなく NEXT_PUBLIC_ でもなくそのままでOK）
-const API_KEY = import.meta.env.VITE_API_KEY;
+// ✅ Vercel の環境変数 NEXT_PUBLIC でOK
+const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
 
 if (!API_KEY) {
-  throw new Error("VITE_API_KEY is not defined in environment variables.");
+  throw new Error("NEXT_PUBLIC_API_KEY is not defined in environment variables.");
 }
 
 // ✅ SDK 初期化
 const genAI = new GoogleGenerativeAI(API_KEY);
 
-// ✅ モデル取得（flash-1.5 が最安で早い）
+// ✅ 正しいモデル名はこれだけ
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
 export async function getHerbalTeaSuggestion(problem: string): Promise<string> {
@@ -25,7 +25,7 @@ export async function getHerbalTeaSuggestion(problem: string): Promise<string> {
 ${problem}
 
 【出力フォーマット】
-① 悩みの要点（やさしく整理）
+① 悩みの要約（やさしく整理）
 ② おすすめのハーブティー3種（各1行で効果キーワードも）
 ③ 飲み方のポイントと注意点
 ④ 一言メッセージ
