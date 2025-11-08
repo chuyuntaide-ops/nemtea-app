@@ -5,7 +5,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 const API_KEY = import.meta.env.VITE_API_KEY;
 
 if (!API_KEY) {
-  throw new Error("NEXT_PUBLIC_API_KEY is not defined in environment variables.");
+  throw new Error("VITE_API_KEY is not defined in environment variables.");
 }
 
 // ✅ SDK 初期化
