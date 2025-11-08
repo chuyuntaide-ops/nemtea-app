@@ -2,7 +2,7 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
 // ✅ Vercel の環境変数 NEXT_PUBLIC でOK
-const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
+const API_KEY = import.meta.env.VITE_API_KEY;
 
 if (!API_KEY) {
   throw new Error("NEXT_PUBLIC_API_KEY is not defined in environment variables.");
