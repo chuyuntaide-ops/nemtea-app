@@ -12,7 +12,7 @@ if (!API_KEY) {
 const genAI = new GoogleGenerativeAI(API_KEY);
 
 // ✅ モデル取得（flash-1.5 が最安で早い）
-const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash-latest" });
+const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
 export async function getHerbalTeaSuggestion(problem: string): Promise<string> {
   const prompt = `
