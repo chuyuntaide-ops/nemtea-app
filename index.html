@@ -1,35 +1,15 @@
-
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ネムティー｜睡眠専門AIアドバイザー</title>
-  <link rel="stylesheet" href="index.css" />
-</head>
-<body>
-  <div class="container">
-    <h1 class="title">ネムティー - 睡眠専門AIアドバイザー</h1>
-    <p class="subtitle">あなたの眠りの悩みに、優しい一杯を。</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ネムティー | 睡眠専門AIアドバイザー</title>
+  </head>
 
-    <div class="card">
-      <label class="label">あなたの睡眠に関するお悩みを教えてください</label>
+  <body>
+    <div id="root"></div>
 
-      <input 
-        id="problem-input" 
-        type="text" 
-        placeholder="例：最近ストレスで眠れない…" 
-        class="input"
-      />
-
-      <button id="suggest-btn" class="btn">ネムティーの提案をもらう</button>
-
-      <p class="hint">Cmd/Ctrl + Enter でも送信できます</p>
-    </div>
-
-    <div id="result" class="result hidden"></div>
-  </div>
-
- <script type="module" src="/src/main.tsx"></script>
-</body>
+    <!-- React の起動ポイント -->
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
